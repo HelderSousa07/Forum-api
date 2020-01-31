@@ -3,10 +3,12 @@ package br.com.alura.forum.modelo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthoritiesContainer;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Perfil implements GrantedAuthority {
 
     @Id
@@ -32,6 +34,6 @@ public class Perfil implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
-        return null;
+        return nome;
     }
 }
