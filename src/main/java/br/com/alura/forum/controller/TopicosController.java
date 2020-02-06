@@ -51,7 +51,6 @@ public class TopicosController {
 			Page<Topico> topicos = topicoRepository.findByCursoNome(nomeCurso, paginacao);
 			return TopicoDto.converter(topicos);
 		}
-
 	}
 
 	@PostMapping
@@ -73,9 +72,7 @@ public class TopicosController {
 		if (topico.isPresent()) {
 			return ResponseEntity.ok(new DetalhesDoTopicoDto(topico.get()));
 		}
-
 		return ResponseEntity.notFound().build();
-
 	}
 
 	@PutMapping("/{id}")
